@@ -1,0 +1,39 @@
+{
+  "name": "@fethcat/version",
+  "version": "3.0.2",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "package.json"
+  ],
+  "license": "ISC",
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "lint": "eslint \"{src,tests}/**/*.ts\"",
+    "format": "prettier -w \"{src,tests}/**/*.ts\"",
+    "version:patch": "ts-node src/index.ts patch",
+    "version:minor": "ts-node src/index.ts minor",
+    "version:major": "ts-node src/index.ts major"
+  },
+  "bin": {
+    "version": "./dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:fethca/version.git"
+  },
+  "publishConfig": {
+    "registry": "https://www.npmjs.com/package/@fethcat/version"
+  },
+  "devDependencies": {
+    "@fethcat/prettier-config": "^1.0.1",
+    "@types/node": "^18.11.18",
+    "prettier": "^2.8.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "async-exec": "^1.1.0"
+  }
+}
