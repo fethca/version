@@ -1,0 +1,9 @@
+{
+  "include": ["src", "tests"],
+  "compilerOptions": {
+    "outDir": "dist",
+    "target": "ES2022",
+    "module": "commonjs",
+    "strict": true
+  }
+}
