@@ -15,6 +15,7 @@ jobs:
           node-version: "20.9.0"
           registry-url: "https://registry.npmjs.org"
       - run: yarn
+      - run: yarn build
       - run: yarn publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
