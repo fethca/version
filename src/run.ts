@@ -11,7 +11,7 @@ export async function run(argv: string[]): Promise<void> {
   const [command] = argv
 
   if (command === 'release') {
-    // E.g pdi-version release qa
+    // E.g version release qa
     const [, env, codeVersion] = argv
     if (!envs.includes(env)) {
       return exitOnError(invalidArg('environment', env, envs))
@@ -20,7 +20,7 @@ export async function run(argv: string[]): Promise<void> {
       exitOnError(error.message)
     })
   } else {
-    // E.g pdi-version patch
+    // E.g version patch
     const [level, ...dirs] = argv
     if (!versionLevel.includes(level)) {
       return exitOnError(invalidArg('version level', level, versionLevel))
