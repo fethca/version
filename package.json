@@ -23,9 +23,6 @@
     "type": "git",
     "url": "git@github.com:fethca/version.git"
   },
-  "publishConfig": {
-    "registry": "https://www.npmjs.com/package/@fethcat/version"
-  },
   "devDependencies": {
     "@fethcat/prettier-config": "^1.0.1",
     "@types/node": "^18.11.18",
