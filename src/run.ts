@@ -1,7 +1,7 @@
-import { envs, versionLevel } from './config'
-import { exitOnError } from './exit'
-import { release } from './release'
-import { version } from './version'
+import { envs, versionLevel } from './config.js'
+import { exitOnError } from './exit.js'
+import { release } from './release.js'
+import { version } from './version.js'
 
 function invalidArg(type: string, value: string, values: string[]) {
   return `Invalid ${type} "${value}", should be one of: ${values.join(',')}`

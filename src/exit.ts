@@ -1,4 +1,4 @@
-import { logError } from './logger'
+import { logError } from './logger.js'
 
 export function exitOnError(error: string | Error): void {
   logError(error)
