@@ -1,9 +1,9 @@
 {
-  "include": ["src", "tests"],
+  "include": ["src", "tests", "vitest.config.ts"],
   "compilerOptions": {
     "outDir": "dist",
-    "target": "ES2022",
-    "module": "commonjs",
-    "strict": true
+    "module": "nodenext",
+    "strict": true,
+    "types": ["vitest/globals"]
   }
 }

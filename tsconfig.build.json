@@ -1,6 +1,6 @@
 {
   "extends": "./tsconfig.json",
-  "exclude": [],
+  "exclude": ["tests", "vitest.config.ts"],
   "compilerOptions": {
     "declaration": true
   }

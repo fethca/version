@@ -1,7 +1,7 @@
-import { extractVersion } from './extract'
-import { git } from './git'
-import { logInfo, logSuccess } from './logger'
-import { yarn } from './yarn'
+import { extractVersion } from './extract.js'
+import { git } from './git.js'
+import { logInfo, logSuccess } from './logger.js'
+import { yarn } from './yarn.js'
 
 export async function version(level: string, dirs: string[]): Promise<void> {
   logInfo(`Bumping ${level} version`)

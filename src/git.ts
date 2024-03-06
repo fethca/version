@@ -1,26 +1,26 @@
-import exec from 'async-exec'
+import { execWithCallbackOnData } from 'async-exec'
 
 export const git = {
   async add(dirs: string[]): Promise<void> {
-    await exec('git add package.json')
+    await execWithCallbackOnData('git add package.json')
     for (const dir of dirs) {
-      await exec(`git -C ${dir} add package.json`)
+      await execWithCallbackOnData(`git -C ${dir} add package.json`)
     }
   },
 
   async commit(message: string): Promise<void> {
-    await exec(`git commit -m "${message}"`)
+    await execWithCallbackOnData(`git commit -m "${message}"`)
   },
 
   async tag(tag: string): Promise<void> {
-    await exec(`git tag "${tag}"`)
+    await execWithCallbackOnData(`git tag "${tag}"`)
   },
 
   async push(params = ''): Promise<void> {
-    await exec(`git push --quiet --no-verify ${params}`)
+    await execWithCallbackOnData(`git push --quiet --no-verify ${params}`)
   },
 
   async checkout(branch: string): Promise<void> {
-    await exec(`git checkout ${branch}`)
+    await execWithCallbackOnData(`git checkout ${branch}`)
   },
 }
