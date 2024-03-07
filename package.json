@@ -13,9 +13,9 @@
     "build": "tsc -p tsconfig.build.json",
     "lint": "eslint \"{src,tests}/**/*.ts\"",
     "format": "prettier -w \"{src,tests}/**/*.ts\"",
-    "version:patch": "ts-node src/index.ts patch",
-    "version:minor": "ts-node src/index.ts minor",
-    "version:major": "ts-node src/index.ts major"
+    "version:patch": "yarn build && node ./dist/index.js patch",
+    "version:minor": "yarn build && node ./dist/index.js minor",
+    "version:major": "yarn build && node ./dist/index.js major"
   },
   "bin": {
     "version": "./dist/index.js"
@@ -29,7 +29,6 @@
     "@fethcat/tests": "^0.0.5",
     "@types/node": "^18.11.18",
     "prettier": "^2.8.1",
-    "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
   },
   "dependencies": {
