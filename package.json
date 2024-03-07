@@ -29,7 +29,6 @@
     "@fethcat/tests": "^0.0.5",
     "@types/node": "^18.11.18",
     "prettier": "^2.8.1",
-    "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
   },
   "dependencies": {
