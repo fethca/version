@@ -2,7 +2,7 @@ name: Publish Package to npmjs
 on:
   push:
     tags:
-      - "v*.*.*"
+      - 'v*.*.*'
 
 jobs:
   build:
@@ -12,9 +12,10 @@ jobs:
       # Setup .npmrc file to publish to npm
       - uses: actions/setup-node@v3
         with:
-          node-version: "20.9.0"
-          registry-url: "https://registry.npmjs.org"
+          node-version: '20.9.0'
+          registry-url: 'https://registry.npmjs.org'
       - run: yarn
+      - run: yarn vitest run --coverage
       - run: yarn build
       - run: yarn publish
         env:
