@@ -1,5 +1,5 @@
 import { execWithCallbackOnData } from 'async-exec'
-import { yarn } from '../src/yarn.js'
+import { yarn } from '../../src/yarn.js'
 
 vi.mock('async-exec')
 

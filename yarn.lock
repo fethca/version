@@ -159,10 +159,17 @@
   resolved "https://registry.npmjs.org/@fethcat/prettier-config/-/prettier-config-1.0.2.tgz#5972de870b66c73fd5142ea35ec8e872f7aabaa0"
   integrity sha512-+79RKhai/vR9F68BzGbu3SJohyys7/8EPzMdoNHApgb+Y2McdDa0vWxPwpux0VJI1JTdIxX4cdAjJmhIeGQUnQ==
 
-"@fethcat/tests@^0.0.5":
-  version "0.0.5"
-  resolved "https://registry.npmjs.org/@fethcat/tests/-/tests-0.0.5.tgz#126db1b600100f938fadf1b333997a2806ef1f85"
-  integrity sha512-HkYdjEXbie4BPnCkGECaHwx/QTVMmqFGxW4z1OkRH3Ehr3rYISiOFz4uTTi/aoRL05Cwm7Y/hIa8w6OzoiARGQ==
+"@fethcat/shared@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.npmjs.org/@fethcat/shared/-/shared-0.0.3.tgz#2518433b388cd871080f3e7d8774fd55b9d9b344"
+  integrity sha512-NF5+NgEKcNOG5Ay+vuqyK5iZRBO151DUei4/o1LO1JfH8/aTVV7yY7MngHTjKRFj9olU27WxPEP2WVNU4jWcfw==
+  dependencies:
+    zod "^3.22.4"
+
+"@fethcat/tests@^0.0.8":
+  version "0.0.8"
+  resolved "https://registry.npmjs.org/@fethcat/tests/-/tests-0.0.8.tgz#9757fc5d5a6b785368aab9736d9b4a74385bd4f9"
+  integrity sha512-EynaQIM218sMacBe6Q9noIMIGpg/8aQWtWWSMoXI8Z3AR2EfofZdkAmlLks/2JLClQNdsbzdpBvp32RD5Rug3A==
   dependencies:
     "@vitest/coverage-v8" "^1.3.1"
     vitest "^1.3.1"
@@ -1026,3 +1033,8 @@ yocto-queue@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/yocto-queue/-/yocto-queue-1.0.0.tgz#7f816433fb2cbc511ec8bf7d263c3b58a1a3c251"
   integrity sha512-9bnSc/HEW2uRy67wc+T8UwauLuPJVn28jb+GtJY16iiKWyvmYJRXVT4UamsAEGQfPohgr2q4Tq0sQbQlxTfi1g==
+
+zod@^3.22.4:
+  version "3.22.4"
+  resolved "https://registry.npmjs.org/zod/-/zod-3.22.4.tgz#f31c3a9386f61b1f228af56faa9255e845cf3fff"
+  integrity sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg==

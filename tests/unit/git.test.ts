@@ -1,5 +1,5 @@
 import { execWithCallbackOnData } from 'async-exec'
-import { git } from '../src/git.js'
+import { git } from '../../src/git.js'
 
 vi.mock('async-exec')
 
