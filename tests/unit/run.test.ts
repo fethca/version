@@ -1,11 +1,11 @@
-import { exitOnError } from '../src/exit.js'
-import { release } from '../src/release.js'
-import { run } from '../src/run.js'
-import { version } from '../src/version.js'
+import { exitOnError } from '../../src/exit.js'
+import { release } from '../../src/release.js'
+import { run } from '../../src/run.js'
+import { version } from '../../src/version.js'
 
-vi.mock('../src/exit')
-vi.mock('../src/release')
-vi.mock('../src/version')
+vi.mock('../../src/exit')
+vi.mock('../../src/release')
+vi.mock('../../src/version')
 
 describe('run', () => {
   beforeEach(() => {

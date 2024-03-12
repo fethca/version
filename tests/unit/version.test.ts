@@ -1,16 +1,17 @@
-import { extractVersion } from '../src/extract.js'
-import { git } from '../src/git.js'
-import { version } from '../src/version.js'
-import { yarn } from '../src/yarn.js'
+import { extractPackageJson } from '@fethcat/shared'
+import { git } from '../../src/git.js'
+import { version } from '../../src/version.js'
+import { yarn } from '../../src/yarn.js'
+import { mockPackageJson } from '../models.js'
 
-vi.mock('../src/extract')
-vi.mock('../src/git')
-vi.mock('../src/logger')
-vi.mock('../src/yarn')
+vi.mock('@fethcat/shared')
+vi.mock('../../src/git')
+vi.mock('../../src/logger')
+vi.mock('../../src/yarn')
 
 describe('version', () => {
   beforeEach(() => {
-    vi.mocked(extractVersion).mockResolvedValue('1.0.0')
+    vi.mocked(extractPackageJson).mockReturnValue(mockPackageJson())
   })
 
   it('should create version according to version level', async () => {

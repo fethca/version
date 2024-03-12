@@ -1,7 +1,7 @@
-import { exitOnError } from '../src/exit.js'
-import { logError } from '../src/logger.js'
+import { exitOnError } from '../../src/exit.js'
+import { logError } from '../../src/logger.js'
 
-vi.mock('../src/logger')
+vi.mock('../../src/logger')
 
 describe('exitOnError', () => {
   it('should log error and exit with code "1"', () => {

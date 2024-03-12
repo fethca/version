@@ -1,14 +1,15 @@
+import { extractPackageJson } from '@fethcat/shared'
 import { createInterface } from 'readline'
-import { extractVersion } from '../src/extract.js'
-import { git } from '../src/git.js'
-import { logInfo } from '../src/logger.js'
-import { confirmRelease, release } from '../src/release.js'
+import { git } from '../../src/git.js'
+import { logInfo } from '../../src/logger.js'
+import { confirmRelease, release } from '../../src/release.js'
+import { mockPackageJson } from '../models.js'
 
 vi.mock('readline')
-vi.mock('../src/exit')
-vi.mock('../src/extract')
-vi.mock('../src/git')
-vi.mock('../src/logger')
+vi.mock('@fethcat/shared')
+vi.mock('../../src/exit')
+vi.mock('../../src/git')
+vi.mock('../../src/logger')
 
 function mockReadLine(answer?: string) {
   const question = vi.fn().mockImplementation((_, cb) => cb(answer))
@@ -50,7 +51,7 @@ describe('confirmRelease', () => {
 
 describe('release', () => {
   beforeEach(() => {
-    vi.mocked(extractVersion).mockResolvedValue('1.0.0')
+    vi.mocked(extractPackageJson).mockReturnValue(mockPackageJson())
   })
 
   it('should not release if release is not confirmed', async () => {
@@ -62,13 +63,13 @@ describe('release', () => {
   it('should get version if version is not provided', async () => {
     mockReadLine('Y')
     await release('prod')
-    expect(extractVersion).toHaveBeenCalled()
+    expect(extractPackageJson).toHaveBeenCalled()
   })
 
   it('should not get version if version is provided', async () => {
     mockReadLine('Y')
     await release('prod', '1.0.0')
-    expect(extractVersion).not.toHaveBeenCalled()
+    expect(extractPackageJson).not.toHaveBeenCalled()
   })
 
   it('should checkout correct version', async () => {

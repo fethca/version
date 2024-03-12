@@ -1,5 +1,5 @@
 import { SpyInstance } from 'vitest'
-import { logError, logInfo, logSuccess } from '../src/logger.js'
+import { logError, logInfo, logSuccess } from '../../src/logger.js'
 
 describe('logger', () => {
   let logSpy: SpyInstance
