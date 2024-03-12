@@ -17,9 +17,6 @@
     "version:minor": "yarn build && node ./dist/index.js minor",
     "version:major": "yarn build && node ./dist/index.js major"
   },
-  "bin": {
-    "version": "./dist/index.js"
-  },
   "repository": {
     "type": "git",
     "url": "git@github.com:fethca/version.git"
@@ -28,11 +25,12 @@
     "@fethcat/prettier-config": "^1.0.2",
     "@fethcat/tests": "^0.0.5",
     "@types/node": "^20.11.25",
-    "prettier": "^2.8.1",
+    "prettier": "^3.2.5",
     "typescript": "^5.3.3"
   },
+  "prettier": "@fethcat/prettier-config",
   "dependencies": {
+    "@fethcat/shared": "^0.0.2",
     "async-exec": "^1.1.0"
-  },
-  "prettier": "@fethcat/prettier-config"
+  }
 }
