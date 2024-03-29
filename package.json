@@ -11,11 +11,12 @@
   "license": "ISC",
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
-    "lint": "eslint \"{src,tests}/**/*.ts\"",
     "format": "prettier -w \"{src,tests}/**/*.ts\"",
-    "version:patch": "yarn build && node ./dist/index.js patch",
-    "version:minor": "yarn build && node ./dist/index.js minor",
-    "version:major": "yarn build && node ./dist/index.js major"
+    "lint": "eslint \"{src,tests}/**/*.ts\"",
+    "test": "vitest run --coverage",
+    "version:patch": "pnpm build && node ./dist/index.js patch",
+    "version:minor": "pnpm build && node ./dist/index.js minor",
+    "version:major": "pnpm build && node ./dist/index.js major"
   },
   "bin": {
     "version": "./dist/index.js"
@@ -25,15 +26,17 @@
     "url": "git@github.com:fethca/version.git"
   },
   "devDependencies": {
-    "@fethcat/prettier-config": "^1.0.2",
-    "@fethcat/tests": "^0.0.8",
-    "@types/node": "^20.11.25",
-    "prettier": "^2.8.1",
-    "typescript": "^5.3.3"
+    "@fethcat/prettier-config": "^1.0.5",
+    "@fethcat/tests": "^0.0.15",
+    "@types/node": "^20.11.30",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.3"
   },
   "dependencies": {
     "@fethcat/shared": "^0.0.3",
-    "async-exec": "^1.1.0"
+    "@vitest/coverage-v8": "^1.4.0",
+    "async-exec": "^1.1.0",
+    "vitest": "^1.4.0"
   },
   "prettier": "@fethcat/prettier-config"
 }
