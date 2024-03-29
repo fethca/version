@@ -43,7 +43,7 @@ describe('run', () => {
   it('should exit if command is not "release" and level is invalid', async () => {
     await run(['invalid level'])
     expect(exitOnError).toHaveBeenCalledWith(
-      'Invalid version level "invalid level", should be one of: patch,minor,major'
+      'Invalid version level "invalid level", should be one of: patch,minor,major',
     )
     expect(release).not.toHaveBeenCalled()
     expect(version).not.toHaveBeenCalled()

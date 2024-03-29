@@ -26,6 +26,7 @@
     "url": "git@github.com:fethca/version.git"
   },
   "devDependencies": {
+    "@fethcat/eslint-plugin": "^0.0.3",
     "@fethcat/prettier-config": "^1.0.5",
     "@fethcat/tests": "^0.0.15",
     "@types/node": "^20.11.30",
@@ -36,7 +37,13 @@
     "@fethcat/shared": "^0.0.3",
     "@vitest/coverage-v8": "^1.4.0",
     "async-exec": "^1.1.0",
+    "eslint": "^8.57.0",
     "vitest": "^1.4.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:@fethcat/back"
+    ]
   },
   "prettier": "@fethcat/prettier-config"
 }
