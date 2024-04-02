@@ -1,6 +1,6 @@
 {
   "name": "@fethcat/version",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",
@@ -41,8 +41,8 @@
     "vitest": "^1.4.0"
   },
   "peerDependencies": {
-    "async-exec": "^1.1.0",
-    "@fethcat/shared": "^0.0.3"
+    "@fethcat/shared": "^0.0.3",
+    "async-exec": "^1.1.0"
   },
   "eslintConfig": {
     "extends": [
