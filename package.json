@@ -19,7 +19,7 @@
     "version:major": "pnpm build && node ./dist/index.js major"
   },
   "bin": {
-    "version": "./dist/index.js"
+    "fethca-version": "./dist/index.js"
   },
   "repository": {
     "type": "git",
