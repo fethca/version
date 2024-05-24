@@ -40,10 +40,6 @@
     "eslint": "^8.57.0",
     "vitest": "^1.4.0"
   },
-  "peerDependencies": {
-    "@fethcat/shared": "^0.0.3",
-    "async-exec": "^1.1.0"
-  },
   "eslintConfig": {
     "extends": [
       "plugin:@fethcat/back"
