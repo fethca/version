@@ -1,29 +1,35 @@
 # Version
 
+## Prerequisites
+
+Before using version, ensure you have the following prerequisites met:
+
+- yarn installed on your system
+
 ## Usage
 
 Install package:
 
 ```bash
-yarn add @fethcat/version
+pnpm add @fethcat/version
 ```
 
 Use cli:
 
 ```bash
 # Bump patch version
-yarn version patch
+pnpm version patch
 
 # Bump minor version
-yarn version minor
+pnpm version minor
 
 # Bump major version
-yarn version major
+pnpm version major
 
 # Bump version + in another directory
-yarn version patch ../dir
+pnpm version patch ../dir
 
 # Release prod version
-yarn version release prod
+pnpm version release prod
 
 ```
