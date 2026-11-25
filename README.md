@@ -4,7 +4,7 @@
 
 Before using version, ensure you have the following prerequisites met:
 
-- yarn installed on your system
+- git, with push access to the repository
 
 ## Usage
 
