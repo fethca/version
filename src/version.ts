@@ -1,11 +1,10 @@
-import { extractPackageJson } from '@fethcat/shared'
 import { git } from './git.js'
 import { logInfo, logSuccess } from './logger.js'
-import { bump, setVersion } from './packageJson.js'
+import { bump, getVersion, setVersion } from './packageJson.js'
 
 export async function version(level: string, dirs: string[]): Promise<void> {
   logInfo(`Bumping ${level} version`)
-  const newVersion = bump(extractPackageJson().version, level)
+  const newVersion = bump(getVersion(), level)
   setVersion(newVersion)
   logSuccess(`New version: ${newVersion}`)
   for (const dir of dirs) {

@@ -1,8 +1,8 @@
-import { extractPackageJson } from '@fethcat/shared'
 import { createInterface } from 'readline'
 import { tagPrefix } from './config.js'
 import { git } from './git.js'
 import { logInfo, logSuccess } from './logger.js'
+import { getVersion } from './packageJson.js'
 
 export function confirmRelease(fromVersion: string, toVersion: string): Promise<boolean> {
   logInfo(`Creating version ${toVersion} from ${fromVersion}`)
@@ -20,7 +20,7 @@ export function confirmRelease(fromVersion: string, toVersion: string): Promise<
 }
 
 export async function release(env: string, codeVersion?: string): Promise<void> {
-  if (!codeVersion) codeVersion = extractPackageJson().version
+  if (!codeVersion) codeVersion = getVersion()
   const fromVersion = `v${codeVersion}`
   const toVersion = tagPrefix[env] + codeVersion
   if (await confirmRelease(fromVersion, toVersion)) {
