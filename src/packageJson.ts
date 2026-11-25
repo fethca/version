@@ -16,3 +16,7 @@ export function setVersion(version: string, dir = '.'): void {
   const content = readFileSync(path, 'utf8')
   writeFileSync(path, content.replace(/("version"\s*:\s*")[^"]*"/, `$1${version}"`))
 }
+
+export function getVersion(dir = '.'): string {
+  return JSON.parse(readFileSync(join(dir, 'package.json'), 'utf8')).version
+}

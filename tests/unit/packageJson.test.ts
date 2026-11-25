@@ -1,7 +1,7 @@
 import { mkdtempSync, readFileSync, writeFileSync } from 'fs'
 import { tmpdir } from 'os'
 import { join } from 'path'
-import { bump, setVersion } from '../../src/packageJson.js'
+import { bump, getVersion, setVersion } from '../../src/packageJson.js'
 
 describe('bump', () => {
   it('should bump patch version', () => {
@@ -17,13 +17,20 @@ describe('bump', () => {
   })
 })
 
-describe('setVersion', () => {
-  function writePackageJson(content: string) {
-    const dir = mkdtempSync(join(tmpdir(), 'version-'))
-    writeFileSync(join(dir, 'package.json'), content)
-    return dir
-  }
+function writePackageJson(content: string) {
+  const dir = mkdtempSync(join(tmpdir(), 'version-'))
+  writeFileSync(join(dir, 'package.json'), content)
+  return dir
+}
 
+describe('getVersion', () => {
+  it('should read the version from package.json', () => {
+    const dir = writePackageJson('{ "name": "app", "version": "1.2.3" }')
+    expect(getVersion(dir)).toBe('1.2.3')
+  })
+})
+
+describe('setVersion', () => {
   it('should only change the version and keep the file formatting', () => {
     const dir = writePackageJson(
       '{\r\n    "name": "app",\r\n    "version": "0.0.1",\r\n    "dependencies": { "x": "1.0.0" }\r\n}\r\n',

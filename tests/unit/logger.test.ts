@@ -1,8 +1,8 @@
-import { SpyInstance } from 'vitest'
+import { MockInstance } from 'vitest'
 import { logError, logInfo, logSuccess } from '../../src/logger.js'
 
 describe('logger', () => {
-  let logSpy: SpyInstance
+  let logSpy: MockInstance
 
   beforeEach(() => {
     logSpy = vi.spyOn(console, 'log').mockImplementation(() => undefined)

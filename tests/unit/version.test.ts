@@ -1,20 +1,18 @@
-import { extractPackageJson } from '@fethcat/shared'
 import { git } from '../../src/git.js'
 import { version } from '../../src/version.js'
-import { setVersion } from '../../src/packageJson.js'
-import { mockPackageJson } from '../models.js'
+import { getVersion, setVersion } from '../../src/packageJson.js'
 
-vi.mock('@fethcat/shared')
 vi.mock('../../src/git')
 vi.mock('../../src/logger')
 vi.mock('../../src/packageJson', async (importOriginal) => ({
   ...(await importOriginal<typeof import('../../src/packageJson.js')>()),
+  getVersion: vi.fn(),
   setVersion: vi.fn(),
 }))
 
 describe('version', () => {
   beforeEach(() => {
-    vi.mocked(extractPackageJson).mockReturnValue(mockPackageJson())
+    vi.mocked(getVersion).mockReturnValue('1.0.0')
   })
 
   it('should bump package.json version according to version level', async () => {

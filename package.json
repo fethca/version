@@ -29,22 +29,24 @@
   "devDependencies": {
     "@fethcat/eslint-plugin": "^0.0.3",
     "@fethcat/prettier-config": "^1.0.5",
-    "@fethcat/tests": "^0.0.15",
-    "@types/node": "^20.11.30",
-    "prettier": "^3.2.5",
-    "typescript": "^5.4.3"
+    "@fethcat/tests": "^0.0.16",
+    "@types/node": "^24.19.4",
+    "@vitest/coverage-v8": "^5.1.2",
+    "prettier": "^3.10.1",
+    "typescript": "^5.9.3",
+    "vite": "^8.3.8",
+    "vitest": "^5.1.2"
   },
   "dependencies": {
-    "@fethcat/shared": "^0.0.3",
-    "@vitest/coverage-v8": "^1.4.0",
-    "async-exec": "^1.1.0",
-    "eslint": "^8.57.0",
-    "vitest": "^1.4.0"
+    "async-exec": "^1.1.0"
   },
   "eslintConfig": {
     "extends": [
       "plugin:@fethcat/back"
     ]
   },
-  "prettier": "@fethcat/prettier-config"
+  "prettier": "@fethcat/prettier-config",
+  "engines": {
+    "node": ">=24"
+  }
 }
