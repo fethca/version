@@ -20,11 +20,11 @@
     "version:major": "pnpm build && node ./dist/index.js major"
   },
   "bin": {
-    "fethca-version": "./dist/index.js"
+    "fethca-version": "dist/index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:fethca/version.git"
+    "url": "git+https://github.com/fethca/version.git"
   },
   "devDependencies": {
     "@fethcat/eslint-plugin": "^0.0.3",
