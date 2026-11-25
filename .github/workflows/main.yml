@@ -25,6 +25,5 @@ jobs:
         run: pnpm test
       - name: Build
         run: pnpm run build
-      # Trusted publishing (OIDC): no NPM_TOKEN, npm >= 11.5.1 exchanges the GitHub token itself
       - name: Publish
         run: npm publish --access=public
